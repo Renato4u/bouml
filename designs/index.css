@@ -1,0 +1,434 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ----- BARRA SUPERIOR (Clara) ----- */
+.top-bar {
+    background-color: #79A9E8; /* Azul claro */
+    padding: 8px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.top-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separa los elementos a los extremos */
+    width: 100%;
+}
+
+.left-top-content {
+    display: flex;
+    align-items: center;
+}
+
+.brand-zone {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Controla el tamaño de la imagen de tu logo */
+.brand-zone .logo {
+    height: 40px; /* Controla la altura para que no deforme la barra */
+    width: auto;  /* Mantiene las proporciones de la imagen */
+    object-fit: contain;
+}
+
+/* Simulación del logo UML */
+.logo-circle {
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 10px;
+}
+
+.logo-circle::before {
+    content: "O";
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.uml-text {
+    font-size: 10px;
+    font-weight: bold;
+    color: red;
+    position: absolute;
+    top: -15px;
+    right: -25px;
+}
+
+.brand-name {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+    color: #1A3969; /* Azul oscuro */
+    letter-spacing: 1px;
+    margin-right: 40px;
+}
+
+.translate-zone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.translate-zone img {
+    height: 16px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* Simulación del botón de Google Translate */
+.google-translate-btn {
+    background-color: #4D90FE;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 6px;
+    border: 1px solid #3079ED;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.google-translate-btn .g {
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.google-translate-btn .char {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* ----- NAVEGACIÓN PRINCIPAL (Oscura) ----- */
+.main-nav {
+    background-color: #1F3A70; /* Azul marino */
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.btn-descargar-top {
+    background: linear-gradient(to bottom, #50A3FF, #1569DB);
+    border: 1px solid #0D4EAA;
+    color: white;
+    padding: 6px 40px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+/* ----- CONTENEDOR PRINCIPAL ----- */
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.layout-grid {
+    display: flex;
+    gap: 40px;
+}
+
+/* --- SECCIÓN IZQUIERDA (Info) --- */
+.info-section {
+    flex: 1;
+}
+
+.info-section h1 {
+    color: #0050A0; /* Azul medio */
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.title-hr {
+    border: 0;
+    border-top: 1px solid #E0E0E0;
+    margin-bottom: 20px;
+}
+
+.info-section h3 {
+    color: #0050A0;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.info-section p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.info-section a {
+    color: #0050A0;
+    text-decoration: underline;
+}
+
+.blue-dots {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.blue-dots li {
+    font-size: 14px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 15px;
+    line-height: 1.4;
+}
+
+.blue-dots li::before {
+    content: "•";
+    color: #0050A0; /* Punto azul */
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* --- SECCIÓN DERECHA (Sidebar Descarga) --- */
+.download-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.card {
+    background-color: #FAFAFA;
+    border: 1px solid #E5E5E5;
+    padding: 20px;
+    text-align: center;
+}
+
+.card h2 {
+    color: #1A3969;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.card .status {
+    color: #0050A0;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.card .patch, .card .fix {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.btn-main-download {
+    display: inline-block;
+    width: 90%;
+    background: linear-gradient(to bottom, #50A3FF, #1569DB);
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+    border-radius: 4px;
+    margin: 15px 0;
+    border: 1px solid #0D4EAA;
+    font-size: 14px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.screenshot {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    background-color: white;
+    padding: 2px;
+}
+
+/* ----- FOOTER ----- */
+.footer-dark {
+    background-color: #1F3A70;
+    color: white;
+    padding: 30px 40px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    padding: 0 40px;
+    border-left: 1px solid #4F6D9F; /* Línea separadora */
+}
+
+.footer-col:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    font-size: 12px;
+    margin-bottom: 8px;
+    color: #DDEEFF;
+}
+
+.copy-col {
+    border-left: none;
+    flex-grow: 1;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 0;
+}
+
+.copy-col p {
+    font-size: 11px;
+    margin-bottom: 0;
+}
+
+/* ========================================= */
+/* --- MENÚ DE HAMBURGUESA Y RESPONSIVO ---- */
+/* ========================================= */
+
+/* Ocultar el checkbox y la hamburguesa en PC */
+.menu-toggle, .hamburger {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    /* --- Ajustes de la Barra Superior --- */
+    .top-bar { padding: 10px 15px; }
+    .brand-name { font-size: 20px; margin-right: 15px; }
+    .translate-zone span { display: none; } /* Oculta la palabra "Traducir" */
+
+    /* --- Ajustes del Menú de Navegación --- */
+    .main-nav {
+        position: relative; /* Necesario para que el menú cuelgue debajo */
+        padding: 0 15px;
+    }
+
+    /* Mostrar icono de hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    /* Líneas de la hamburguesa */
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Ocultar la lista de enlaces y volverla un menú desplegable */
+    .main-nav ul {
+        display: none; /* Oculto por defecto */
+        position: absolute;
+        top: 45px; /* Altura de la barra azul oscuro */
+        left: 0;
+        width: 100%;
+        background-color: #1A3969; /* Azul más oscuro para el desplegable */
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        align-items: center;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        z-index: 100;
+    }
+
+    /* Cuando el checkbox oculto está activado, muestra la lista (<ul>) */
+    .menu-toggle:checked ~ ul {
+        display: flex;
+    }
+
+    /* Animación genial: Convertir hamburguesa en una 'X' al hacer clic */
+    .menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- Ajustes del Contenido Principal --- */
+    .layout-grid {
+        flex-direction: column; /* Apila el texto y la descarga */
+        gap: 30px;
+    }
+
+    .download-sidebar {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* --- Ajustes del Footer --- */
+    .footer-grid { flex-direction: column; gap: 20px; }
+    .footer-col {
+        padding: 0;
+        border-left: none;
+        text-align: center;
+        border-bottom: 1px solid #4F6D9F;
+        padding-bottom: 15px;
+    }
+    .footer-col:last-child { border-bottom: none; }
+    .copy-col { justify-content: center; }
+}
