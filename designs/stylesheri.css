@@ -1,0 +1,172 @@
+:root {
+    --blue-dark: #1e3a8a;
+    --blue-light: #3b82f6;
+    --bg: #f5f5f5;
+    --text: #222;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* 🔷 Barra superior */
+.topbar {
+    background: #6ea0d6;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar h1 {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* 🔷 Navbar */
+.navbar {
+    background: var(--blue-dark);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* 🔘 Botón descargar */
+.btn-download {
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+
+/* 📄 Contenido */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+}
+
+/* Títulos */
+h2 {
+    color: #1e40af;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Listas */
+ul {
+    margin: 10px 0 20px 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* 🔲 Videos estilo cuadricula */
+.video {
+    width: 180px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.video img {
+    width: 100%;
+    border: 1px solid #ccc;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.video p {
+    margin-top: 5px;
+    font-size: 13px;
+}
+.videos {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.video {
+    width: 150px;
+    text-align: center;
+}
+
+.video img {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+/* 🔹 Secciones separadas */
+.section-divider {
+    border-top: 4px solid #1e3a8a;
+    margin: 30px 0;
+}
+
+/* 🔻 Footer */
+footer {
+    background: #1e3a8a;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    width: 20%;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-column a {
+    display: block;
+    color: #ddd;
+    font-size: 12px;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
