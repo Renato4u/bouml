@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Benchmark - BOUML</title>
+<link rel="stylesheet" href="stylesheri.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="logo">
+        <h1>BOUML</h1>
+    </div>
+
+    <div class="translate">
+        <span>Traducir</span>
+        <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+        <img src="https://flagcdn.com/w40/fr.png" alt="FR">
+    </div>
+</div>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Documentation</a></li>
+        <li><a href="contribuciones.html">Contributions</a></li>
+        <li><a href="benchmarks.html">Benchmark</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+<h2>Benchmark</h2>
+
+<p>
+Al revisar los foros sobre herramientas UML, comparé BOUML con otras herramientas para analizar su rendimiento.
+</p>
+
+<p>
+Las pruebas se realizaron con ingeniería inversa del código fuente de Java JDK 1.4.2.
+</p>
+
+<p>
+BOUML destacó por poder procesar grandes cantidades de clases con menor consumo de memoria y mayor velocidad.
+</p>
+
+<hr>
+
+<h3>BOUML vs Enterprise Architect</h3>
+
+<table>
+<tr>
+<th>Métrica</th>
+<th>BOUML</th>
+<th>Enterprise Architect</th>
+</tr>
+
+<tr><td>Invertir + Guardar</td><td>51 s</td><td>11 min 25 s</td></tr>
+<tr><td>Carga</td><td>3 s</td><td>4 s</td></tr>
+<tr><td>Memoria</td><td>38 MB</td><td>31 MB</td></tr>
+<tr><td>Generación</td><td>16 s</td><td>4 min 31 s</td></tr>
+</table>
+
+<hr>
+
+<h3>BOUML vs Poseidon</h3>
+
+<table>
+<tr>
+<th>Métrica</th>
+<th>BOUML</th>
+<th>Poseidon</th>
+</tr>
+
+<tr><td>Ingeniería inversa</td><td>17 s</td><td>2 min 30 s</td></tr>
+<tr><td>Guardar</td><td>2 s</td><td>51 s</td></tr>
+<tr><td>Carga</td><td>0.7 s</td><td>49 s</td></tr>
+<tr><td>Memoria</td><td>17 MB</td><td>314 MB</td></tr>
+</table>
+
+<p><strong>Nota:</strong> Poseidon no permite generar código completo.</p>
+
+<hr>
+
+<h3>BOUML vs Rhapsody</h3>
+
+<table>
+<tr>
+<th>Métrica</th>
+<th>BOUML</th>
+<th>Rhapsody</th>
+</tr>
+
+<tr><td>Ingeniería inversa</td><td>47 s</td><td>6 min 17 s</td></tr>
+<tr><td>Guardar</td><td>4 s</td><td>28 s</td></tr>
+<tr><td>Carga</td><td>3 s</td><td>23 s</td></tr>
+<tr><td>Memoria</td><td>38 MB</td><td>165 MB</td></tr>
+<tr><td>Generación</td><td>16 s</td><td>3 min 18 s</td></tr>
+</table>
+
+<hr>
+
+<h3>BOUML vs Rose</h3>
+
+<table>
+<tr>
+<th>Métrica</th>
+<th>BOUML</th>
+<th>Rose</th>
+</tr>
+
+<tr><td>Ingeniería inversa</td><td>39 s</td><td>12 min 55 s</td></tr>
+<tr><td>Guardar</td><td>4 s</td><td>11 s</td></tr>
+<tr><td>Carga</td><td>2 s</td><td>17 s</td></tr>
+<tr><td>Memoria</td><td>38 MB</td><td>157 MB</td></tr>
+</table>
+
+<hr>
+
+<h3>BOUML vs Visual Paradigm</h3>
+
+<table>
+<tr>
+<th>Métrica</th>
+<th>BOUML</th>
+<th>Visual Paradigm</th>
+</tr>
+
+<tr><td>Ingeniería inversa</td><td>17 s</td><td>25 s</td></tr>
+<tr><td>Guardar</td><td>2 s</td><td>49 s</td></tr>
+<tr><td>Carga</td><td>0.7 s</td><td>21 s</td></tr>
+<tr><td>Memoria</td><td>17 MB</td><td>279 MB</td></tr>
+<tr><td>Generación</td><td>6 s</td><td>12 s</td></tr>
+</table>
+
+<p><strong>Nota:</strong> Visual Paradigm presenta problemas al guardar proyectos.</p>
+
+<hr>
+
+<h3>BOUML vs StarUML</h3>
+
+<table>
+<tr>
+<th>Métrica</th>
+<th>BOUML</th>
+<th>StarUML</th>
+</tr>
+
+<tr><td>Ingeniería inversa</td><td>57 s</td><td>5 min 5 s</td></tr>
+<tr><td>Guardar</td><td>4 s</td><td>8 s</td></tr>
+<tr><td>Carga</td><td>3 s</td><td>40 s</td></tr>
+<tr><td>Memoria</td><td>38 MB</td><td>165 MB</td></tr>
+<tr><td>Generación</td><td>16 s</td><td>11 s</td></tr>
+</table>
+
+<hr>
+
+<h3>BOUML vs UModel</h3>
+
+<table>
+<tr>
+<th>Métrica</th>
+<th>BOUML</th>
+<th>UModel</th>
+</tr>
+
+<tr><td>Ingeniería inversa</td><td>57 s</td><td>50 s</td></tr>
+<tr><td>Guardar</td><td>4 s</td><td>34 s</td></tr>
+<tr><td>Carga</td><td>3 s</td><td>14 s</td></tr>
+<tr><td>Memoria</td><td>38 MB</td><td>115 MB</td></tr>
+<tr><td>Generación</td><td>16 s</td><td>21 s</td></tr>
+</table>
+
+<hr>
+
+<h3>BOUML vs Jude</h3>
+
+<table>
+<tr>
+<th>Métrica</th>
+<th>BOUML</th>
+<th>Jude</th>
+</tr>
+
+<tr><td>Ingeniería inversa</td><td>47 s</td><td>8 min 20 s</td></tr>
+<tr><td>Guardar</td><td>4 s</td><td>25 s</td></tr>
+<tr><td>Carga</td><td>3 s</td><td>33 s</td></tr>
+<tr><td>Memoria</td><td>38 MB</td><td>228 MB</td></tr>
+<tr><td>Generación</td><td>16 s</td><td>6 min</td></tr>
+</table>
+
+<hr>
+
+<h3>BOUML vs Omondo</h3>
+
+<table>
+<tr>
+<th>Métrica</th>
+<th>BOUML</th>
+<th>Omondo</th>
+</tr>
+
+<tr><td>Ingeniería inversa</td><td>33 s</td><td>13 min 48 s</td></tr>
+<tr><td>Carga</td><td>1.5 s</td><td>1 min</td></tr>
+<tr><td>Operaciones</td><td>Instantáneo</td><td>Varios segundos</td></tr>
+</table>
+
+</div>
+
+</body>
+</html>
