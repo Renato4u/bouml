@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUML - Author & Links</title>
+    <link rel="stylesheet" href="designs/StyleAuthor.css">
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="logo-section">
+                <img src="assets/images/BOUML_logo.png" alt="BOUML Logo" class="main-logo">
+                <span class="logo-text">BOUML</span>
+                <span class="traducir-text">Traducir</span>
+                <span class="flags">
+                    <img src="assets/images/reino-unido-3.png" alt="Reino Unido">
+                    <img src="assets/images/francia.png" alt="Francia">
+                </span>
+            </div>
+            <div class="translate-section">
+                <img src="assets/images/google-translate.png" alt="Google Translate" class="translate-icon">
+            </div>
+        </div>
+
+        <nav class="nav-bar">
+            <button class="menu-toggle" id="mobile-menu-btn">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="ScreenFeatures.html">Features</a></li>
+                <li><a href="#">Screenshots</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="ScreenDownload.html">Download</a></li>
+                <li><a href="#">Install</a></li>
+                <li class="active"><a href="ScreenAuthor.html">Contributions</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <button class="download-btn">Descargar</button>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+        <h2 class="page-title">Author, Links & Development</h2>
+
+        <div class="author-box">
+            <img src="assets/images/bp.jpg" alt="Bruno Pagès" class="author-photo">
+            <div class="author-info">
+                <div class="author-name">Author: Bruno Pagès</div>
+                <p>Si necesita intercambios privados, contácteme directamente por email:</p>
+                <p class="author-email">contact@bouml.fr</p>
+            </div>
+        </div>
+
+        <div class="details-grid">
+            
+            <div>
+                <h3 class="col-header">Development, Documentation & Packaging</h3>
+                <ul class="dev-list">
+                    <li><b>Qt:</b> Framework para la interfaz.</li>
+                    <li><b>OGDF:</b> Para el layout automático.</li>
+                    <li><b>OpenOffice.org suite.</b></li>
+                    <li><b>Le Gimp:</b> Editor de imágenes.</li>
+                    <li><b>ksnapshot:</b> Aplicación KDE para capturas.</li>
+                    <li><b>Valgrind:</b> Herramientas de depuración.</li>
+                    <li><b>Inno setup:</b> Instalador gratuito para Windows.</li>
+                </ul>
+            </div>
+
+            <div class="links-section">
+                <h3 class="col-header">Links & Resources</h3>
+                
+                <p class="norm-title">The norm:</p>
+                <a href="#" class="blue-link">OMG UML Resource Page</a>
+
+                <p class="distro-title">Supported Distributions:</p>
+                <div class="pills-container">
+                    <span class="pill">Apple</span>
+                    <span class="pill">CentOS</span>
+                    <span class="pill">Debian</span>
+                    <span class="pill">Fedora</span>
+                    <span class="pill">Mint</span>
+                    <span class="pill">Mageia</span>
+                    <span class="pill">openSUSE</span>
+                    <span class="pill">Slackware</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Site map</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Mapa del sitio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Detemap</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Mapa del sitio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Documentacion</h3>
+                <ul>
+                    <li><a href="#">Caracteristicas</a></li>
+                    <li><a href="#">Capturas</a></li>
+                    <li><a href="#">Descargas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Benchmark</h3>
+                <ul>
+                    <li><a href="#">Contribuciones</a></li>
+                    <li><a href="#">Benchmark</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Author & links</h3>
+                <ul>
+                    <li><a href="#">Autor & enlaces</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>2024 BOUML. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'en,fr,es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="scripts/MainScript.js"></script>
+</body>
+</html>

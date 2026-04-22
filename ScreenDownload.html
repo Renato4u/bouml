@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUML - Download & Install</title>
+    <link rel="stylesheet" href="designs/StyleDownload.css">
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="logo-section">
+                <img src="assets/images/BOUML_logo.png" alt="BOUML Logo" class="main-logo">
+                <span class="logo-text">BOUML</span>
+                <span class="traducir-text">Traducir</span>
+                <span class="flags">
+                    <img src="assets/images/reino-unido-3.png" alt="Reino Unido">
+                    <img src="assets/images/francia.png" alt="Francia">
+                </span>
+            </div>
+            <div class="translate-section">
+                <img src="assets/images/google-translate.png" alt="Google Translate" class="translate-icon">
+            </div>
+        </div>
+
+        <nav class="nav-bar">
+            <button class="menu-toggle" id="mobile-menu-btn">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="ScreenFeatures.html">Features</a></li>
+                <li><a href="#">Screenshots</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li class="active"><a href="ScreenDownload.html">Download</a></li>
+                <li><a href="#">Install</a></li>
+                <li><a href="ScreenAuthor.html">Contributions</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <button class="download-btn">Descargar</button>
+        </nav>
+    </header>
+
+    <main class="main-container main-download">
+        <h2 class="page-title">Descargas e Instalación por Sistema</h2>
+
+        <div class="os-box">
+            <h3 class="os-title">Microsoft Windows</h3>
+            <p>BOUML es compatible con Windows desde la versión 7 hasta la 11 (32 y 64 bits). El instalador incluye automáticamente las dependencias de Qt 4.8 y los plug-outs básicos.</p>
+            <p class="mt-15">
+                <span class="highlight-blue">Instalador ejecutable:</span><br>
+                Bouml_7.11.patch4_setup.exe<br>
+                Si encuentras problemas al guardar proyectos, haz clic derecho y selecciona "Ejecutar como administrador".
+            </p>
+        </div>
+
+        <div class="os-box outlined">
+            <h3 class="os-title">Sistemas basados en Debian (Ubuntu, Mint, Raspbian)</h3>
+            <p>Para arquitecturas amd64, i386, armhf y arm64. Debido a que el servidor utiliza SSL, se requiere el transporte HTTPS para APT.</p>
+            <div class="terminal">
+# 1. Instalar soporte HTTPS para el gestor de paquetes sudo apt-get install apt-transport-https # 2. Añadir la llave de firma oficial de BOUML wget -q https://www.bouml.fr/bouml_key.asc -O- | sudo apt-key add - # 3. Actualizar e instalar el paquete sudo apt-get update sudo apt-get install bouml
+            </div>
+        </div>
+
+        <div class="os-box">
+            <h3 class="os-title">Distribuciones RPM (CentOS, Fedora, Mageia, openSUSE)</h3>
+            <p>Para sistemas RedHat-like. Si utilizas una versión reciente de Fedora o CentOS Stream, asegúrate de habilitar los repositorios de compatibilidad para Qt 4.8.</p>
+            <div class="rpm-grid">
+                <div>
+                    <span class="highlight-blue">CentOS 7 / Stream 8 & 9:</span><br>
+                    Usa el paquete bouml-7.11.patch4-1.x86_64.rpm. Instalación vía: yum localinstall bouml...rpm
+                </div>
+                <div>
+                    <span class="highlight-blue">Fedora & Rosa Linux</span><br>
+                    Los paquetes de CentOS son 100% compatibles. En Rosa, se recomienda usar el instalador urpmi.
+                </div>
+                <div>
+                    <span class="highlight-blue">openSUSE Leap / Tumbleweed:</span><br>
+                    Instalación mediante zypper install tras descargar el RPM correspondiente a x86_64.
+                </div>
+            </div>
+        </div>
+
+        <div class="os-box outlined">
+            <h3 class="os-title">Otros Sistemas Unix (Slackware, Gentoo, BSD)</h3>
+            <p>Información detallada sobre portabilidad y binarios para sistemas no basados en Debian o RPM.</p>
+            <div class="rpm-grid">
+                <div>
+                    <span class="highlight-blue">Slackware Linux:</span><br>
+                    Para Slackware 14 y superiores, usar los binarios compilados para CentOS 6.
+                </div>
+                <div>
+                    <span class="highlight-blue">Gentoo / OpenBSD / FreeBSD:</span><br>
+                    Paquetes binarios disponibles y soporte a partir de OpenBSD 6.x.
+                </div>
+                <div>
+                    <span class="highlight-blue">Archlinux / Manjaro:</span><br>
+                    Usa el repositorio AUR. El comando estándar es yay -S bouml.
+                </div>
+            </div>
+        </div>
+
+        <div class="os-box">
+            <h3 class="os-title">Apple MacOS X</h3>
+            <p>Compatible con procesadores Intel. El paquete viene pre-compilado en formato de imagen de disco.</p>
+            <p class="mt-15">
+                <span class="highlight-blue">Imagen DMG:</span> bouml_patch4_macosx.dmg<br>
+                Arrastra el icono de BOUML a tu carpeta de Aplicaciones para completar la instalación.
+            </p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Site map</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Mapa del sitio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Detemap</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Mapa del sitio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Documentacion</h3>
+                <ul>
+                    <li><a href="#">Caracteristicas</a></li>
+                    <li><a href="#">Capturas</a></li>
+                    <li><a href="#">Descargas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Benchmark</h3>
+                <ul>
+                    <li><a href="#">Contribuciones</a></li>
+                    <li><a href="#">Benchmark</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Author & links</h3>
+                <ul>
+                    <li><a href="#">Autor & enlaces</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>2024 BOUML. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'en,fr,es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="scripts/MainScript.js"></script>
+</body>
+</html>

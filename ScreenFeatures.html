@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUML - UML Tool</title>
+    <link rel="stylesheet" href="designs/StyleFeatures.css">
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="logo-section">
+                <img src="assets/images/BOUML_logo.png" alt="BOUML Logo" class="main-logo">
+                <span class="logo-text">BOUML</span>
+                <span class="traducir-text">Traducir</span>
+                <span class="flags">
+                    <img src="assets/images/reino-unido-3.png" alt="Reino Unido">
+                    <img src="assets/images/francia.png" alt="Francia">
+                </span>
+            </div>
+            <div class="translate-section">
+                <img src="assets/images/google-translate.png" alt="Google Translate" class="translate-icon">
+            </div>
+        </div>
+
+        <nav class="nav-bar">
+            <button class="menu-toggle" id="mobile-menu-btn">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="active"><a href="ScreenFeatures.html">Features</a></li>
+                <li><a href="#">Screenshots</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="ScreenDownload.html">Download</a></li>
+                <li><a href="#">Install</a></li>
+                <li><a href="ScreenAuthor.html">Contributions</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <button class="download-btn">Descargar</button>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="content-left">
+            <h2>Main points:</h2>
+            <ul>
+                <li>It runs under Linux, MacOS X and Windows thanks to Qt.</li>
+                <li>It allows to program simultaneously in C++, Java, Php, Python, IDL and MySQL.</li>
+                <li>Thanks to a full access to the generated forms, you are the master and you decide what must be generated.</li>
+                <li>It is extensible, and the external tools (I name them plug-outs because they are executed outside BOUML) may be developed in C++ or Java, using BOUML for their definition as any other program.</li>
+                <br>
+                <li>It is very fast and doesn't require much memory to manage several thousands of classes, see benchmark.</li>
+            </ul>
+
+            <h2>Builtin tools</h2>
+            <p>Some plug-outs, written by hand will help you in your daily tasks:</p>
+            <ul>
+                <li>C++ code generator, reverse, roundtrip</li>
+                <li>C code generator</li>
+                <li>Java code generator, catalog, reverse, roundtrip</li>
+                <li>Php code generator, reverse, roundtrip</li>
+                <li>Python code generator</li>
+                <li>Idl code generator</li>
+                <li>MySQL code generator, reverse</li>
+                <li>Plug-out upgrade</li>
+                <li>Roundtrip body</li>
+            </ul>
+        </section>
+
+        <aside class="content-right">
+            <h2>Plug-outs (defined<br>under Bouml):</h2>
+            <ul>
+                <li>State machine generator</li>
+                <li>HTML documentation generator, diagrams may be produced through PNG or SVG pictures</li>
+                <li>XMI 1.2 and 2.1 generators</li>
+                <li>XMI 2.1 import</li>
+                <li>pro file generator</li>
+                <li>Rational Rose import (only the model is imported, the diagrams are created empty)</li>
+                <li>C++ utilities</li>
+                <li>Use case wizard</li>
+                <li>Sort</li>
+                <li>File control</li>
+                <li>Deploy classes</li>
+                <li>Global change</li>
+                <li>Uml projection</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Site map</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Mapa del sitio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Detemap</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Mapa del sitio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Documentacion</h3>
+                <ul>
+                    <li><a href="#">Caracteristicas</a></li>
+                    <li><a href="#">Capturas</a></li>
+                    <li><a href="#">Descargas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Benchmark</h3>
+                <ul>
+                    <li><a href="#">Contribuciones</a></li>
+                    <li><a href="#">Benchmark</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Author & links</h3>
+                <ul>
+                    <li><a href="#">Autor & enlaces</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>2024 BOUML. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'en,fr,es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="scripts/MainScript.js"></script>
+</body>
+</html>
