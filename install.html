@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUML - Instalación</title>
+    <link rel="stylesheet" href="designs/styles.css">
+    <style>
+        /* Ocultar el widget oficial de Google por completo */
+        #google_translate_element {
+            display: none;
+        }
+        /* Evitar que Google ponga su barra superior molesta */
+        .skiptranslate iframe {
+            display: none !important;
+        }
+        body {
+            top: 0px !important;
+        }
+
+        /* --- ESTILOS PARA EL MENÚ DESPLEGABLE --- */
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 10px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 1000;
+            min-width: 150px;
+            border: 1px solid #ddd;
+        }
+
+        .dropdown-menu button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            background: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            transition: background 0.2s;
+        }
+
+        .dropdown-menu button:hover {
+            background-color: #e4f1fe;
+            color: #0b53a8;
+        }
+
+        .show-menu {
+            display: block;
+        }
+
+        /* --- ESTILOS ESPECÍFICOS PARA LA PÁGINA DE INSTALACIÓN --- */
+        .install-container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .install-header-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .install-header-title h1 {
+            color: #1a4b8c;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .install-header-title p {
+            color: #4a6b8c;
+            font-size: 16px;
+        }
+
+        .install-panel {
+            border: 1px solid #d1e3f8;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .panel-top-bar {
+            background-color: #7187a8;
+            height: 15px;
+            width: 100%;
+        }
+
+        .panel-header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e1e9f4;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-header h2 {
+            color: #1a2b4c;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-icon {
+            font-size: 24px; /* Para usar emojis como iconos temporales */
+        }
+
+        .panel-content {
+            background-color: #eaf3fc;
+            padding: 25px 30px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #111;
+        }
+
+        .panel-content p {
+            margin-bottom: 15px;
+        }
+
+        .panel-content ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .panel-content li {
+            margin-bottom: 8px;
+        }
+
+        .panel-content h4 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .panel-content a {
+            color: #333;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (Mismo que el anterior) -->
+    <header class="top-header">
+        <div class="logo-section">
+            <a href="#" class="logo-link"><img src="https://github.com/Renato4u/bouml/blob/main/assets/images/BOUML_logo.png?raw=true" alt="UML"></a>
+            <span class="logo-text"><img src="assets/images/logo_eduardo.png" alt="BOUML"></span>
+            <div class="translate-section">
+                <span>Traducir</span>
+                <div class="flags">
+                    <div class="flag-uk" title="English" style="cursor:pointer;" onclick="traducirConGoogle('en')">
+                        <img src="https://github.com/Renato4u/bouml/blob/main/assets/images/reino-unido-3.png?raw=true" alt="English">
+                    </div>
+                    <div class="flag-fr" title="Français" style="cursor:pointer;" onclick="traducirConGoogle('fr')">
+                        <img src="https://github.com/Renato4u/bouml/blob/main/assets/images/francia.png?raw=true" alt="Français">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dropdown-container">
+            <img src="assets/images/traductor_eduardo.png" style="cursor:pointer;" onclick="toggleMenu()" title="Más idiomas">
+            <div id="miMenuIdiomas" class="dropdown-menu">
+                <button onclick="traducirConGoogle('es')">🇪🇸 Español</button>
+                <button onclick="traducirConGoogle('en')">🇬🇧 Inglés</button>
+                <button onclick="traducirConGoogle('fr')">🇫🇷 Francés</button>
+                <button onclick="traducirConGoogle('de')">🇩🇪 Alemán</button>
+                <button onclick="traducirConGoogle('it')">🇮🇹 Italiano</button>
+                <button onclick="traducirConGoogle('pt')">🇵🇹 Portugués</button>
+                <button onclick="traducirConGoogle('ja')">🇯🇵 Japonés</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="google_translate_element"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="screenshots.html">Screenshots</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="install.html">Install</a></li>
+            <li><a href="#">Contributions</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+        <button class="btn-download">Descargar</button>
+    </nav>
+
+    <!-- MAIN CONTENT - INSTALACIÓN -->
+    <main class="install-container">
+        
+        <div class="install-header-title">
+            <h1>Guia de instalacion</h1>
+            <p>Instrucciones paso a paso para configurar BOUML en tu sistema</p>
+        </div>
+
+        <!-- PANEL WINDOWS -->
+        <div class="install-panel">
+            <div class="panel-top-bar"></div>
+            <div class="panel-header">
+                <h2><span class="panel-icon">🪟</span> Instalacion en windows</h2>
+            </div>
+            <div class="panel-content">
+                <p>Ejecute el programa de instalación (setup) y siga las instrucciones en pantalla. No es necesario desinstalar una versión anterior primero.</p>
+                <ul>
+                    <li>bouml.exe está compilado en modo estático y solo requiere mingwm10.dll (el cual se instala automáticamente por el setup).</li>
+                    <li>Para ahorrar espacio, los otros ejecutables están compilados en modo dinámico y requieren todas las librerías DLL instaladas por el setup.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PANEL LINUX -->
+        <div class="install-panel">
+            <div class="panel-top-bar"></div>
+            <div class="panel-header">
+                <h2><span class="panel-icon">🐧</span> Instalacion en Linux</h2>
+            </div>
+            <div class="panel-content">
+                <p>El modo de instalación depende de la distribución, se indica en la página de descarga.</p>
+                <p>Por defecto, los ejecutables se instalan en /usr/lib/bouml (distribuciones basadas en Debian o distribuciones basadas en Red Hat de 32 bits) o en /usr/lib64/bouml (distribuciones basadas en Red Hat de 64 bits), y el script de shell bouml se ubica en /usr/bin.</p>
+                <p>Se debe usar el script de shell bouml para iniciar BOUML, que establece variables de entorno que le permiten encontrar el plug-out .</p>
+
+                <h4>Versiones recientes de Debian/Ubuntu/...</h4>
+                <p>En ellos Qt4 no está disponible, la instalación ya no se realiza con los archivos deb de mis repositorios, sino extrayendo donde quieras el archivo tar con los subdirectorios.y lib que contiene todos los archivos necesarios, incluidas las bibliotecas Qt4. Consulte la página <a href="#">de descarga</a> para obtener la distribución correspondiente.</p>
+
+                <h4>Versiones recientes de Red Hat/CentOS/...</h4>
+                <p>En ellos, Qt4 no está gestionado. Para instalarlo, puedes usar mi paquete <a href="#">Qt4LibsForCentOs7.x86_64.rpm</a> y luego instalar BoUML desde <a href="#">Bouml 7.11 parche 4.</a> Consulta la página <a href="#">de descargas</a> para la distribución correspondiente.</p>
+            </div>
+        </div>
+
+        <!-- PANEL MACOS -->
+        <div class="install-panel">
+            <div class="panel-top-bar"></div>
+            <div class="panel-header">
+                <h2><span class="panel-icon">🍎</span> Instalacion en macOS</h2>
+            </div>
+            <div class="panel-content">
+                <p>La instalación se realiza a través del buscador (vea este <a href="#">vídeo</a> en YouTube ).</p>
+                <p>Te recomiendo que crees una carpeta llamada bouml dentro de Aplicaciones para instalar bouml y también para extraer en ella el archivo tar de los proyectos Plug-out y el de los archivos de traducción. A través del Finder, haga doble clic en el archivo .dmg que desea instalar. Aparecerá una nueva ventana que contiene el icono de la aplicación correspondiente. Arrastre y suelte este icono en la carpeta Aplicaciones o en la subcarpeta que haya creado.</p>
+                <p>Ahora puedes cerrar la ventana y el pseudodisco añadido en el Finder por la instalación.</p>
+                <p>Para iniciar bouml , projectControl o projectSynchro , puede usar el buscador o el launchpad (es posible que tenga que usar las flechas horizontales para acceder a la pantalla que muestra sus iconos) y, obviamente, también puede agregar la(s) aplicación(es) esperada(s) al dock .</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER (Mismo que el anterior) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Site map</h4>
+                    <a href="#">FAQ</a>
+                    <a href="sitemap.html">Mapa del sitio</a>
+                    <a href="#">Legal Mention</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Detemap</h4>
+                    <a href="#">FAQ</a>
+                    <a href="sitemap.html">Mapa del sitio</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Documentacion</h4>
+                    <a href="#">Caracteriisticas</a>
+                    <a href="screenshots.html">Capturas</a>
+                    <a href="#">Descargas</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Benchmark</h4>
+                    <a href="#">Contribuciones</a>
+                    <a href="#">Benchmark</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Author & links</h4>
+                    <a href="#">Autor & enlaces</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                2024 BOUML. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS DE TRADUCCIÓN -->
+    <script type="text/javascript">
+        function toggleMenu() {
+            document.getElementById("miMenuIdiomas").classList.toggle("show-menu");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-container img')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-menu')) {
+                        openDropdown.classList.remove('show-menu');
+                    }
+                }
+            }
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es', 
+                includedLanguages: 'en,fr,es,de,it,pt,ja',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function traducirConGoogle(idioma) {
+            var combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = idioma;
+                combo.dispatchEvent(new Event('change')); 
+            }
+            document.getElementById("miMenuIdiomas").classList.remove("show-menu");
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

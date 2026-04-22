@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUML - Mapa del sitio</title>
+    <link rel="stylesheet" href="designs/styles.css">
+    <style>
+        /* Ocultar el widget oficial de Google por completo */
+        #google_translate_element {
+            display: none;
+        }
+        /* Evitar que Google ponga su barra superior molesta */
+        .skiptranslate iframe {
+            display: none !important;
+        }
+        body {
+            top: 0px !important;
+        }
+
+        /* --- ESTILOS PARA EL MENÚ DESPLEGABLE --- */
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 10px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 1000;
+            min-width: 150px;
+            border: 1px solid #ddd;
+        }
+
+        .dropdown-menu button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            background: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            transition: background 0.2s;
+        }
+
+        .dropdown-menu button:hover {
+            background-color: #e4f1fe;
+            color: #0b53a8;
+        }
+
+        .show-menu {
+            display: block;
+        }
+
+        /* --- ESTILOS ESPECÍFICOS PARA PÁGINAS DE PANELES --- */
+        .page-container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .page-header-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header-title h1 {
+            color: #1a4b8c;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-header-title p {
+            color: #4a6b8c;
+            font-size: 16px;
+        }
+
+        .content-panel {
+            border: 1px solid #d1e3f8;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .panel-top-bar {
+            background-color: #7187a8;
+            height: 15px;
+            width: 100%;
+        }
+
+        .panel-header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e1e9f4;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-header h2 {
+            color: #1a2b4c;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-icon {
+            font-size: 24px;
+        }
+
+        .panel-content {
+            background-color: #eaf3fc;
+            padding: 25px 30px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #111;
+        }
+
+        .panel-content p {
+            margin-bottom: 15px;
+        }
+
+        /* Estilos específicos para las listas de enlaces azules */
+        .panel-content ul {
+            margin-left: 25px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            list-style-type: disc;
+        }
+
+        .panel-content li {
+            margin-bottom: 5px;
+            color: #2b82c9; /* Color de la viñeta */
+        }
+
+        .panel-content li a {
+            color: #2b82c9; /* Color del enlace */
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .panel-content li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+       <div class="logo-section">
+            <a href="#" class="logo-link"><img src="https://github.com/Renato4u/bouml/blob/main/assets/images/BOUML_logo.png?raw=true" alt="UML"></a>
+            <span class="logo-text"><img src="assets/images/logo_eduardo.png" alt="BOUML"></span>
+            <div class="translate-section">
+                <span>Traducir</span>
+                <div class="flags">
+                    <div class="flag-uk" title="English" style="cursor:pointer;" onclick="traducirConGoogle('en')">
+                        <img src="https://github.com/Renato4u/bouml/blob/main/assets/images/reino-unido-3.png?raw=true" alt="English">
+                    </div>
+                    <div class="flag-fr" title="Français" style="cursor:pointer;" onclick="traducirConGoogle('fr')">
+                        <img src="https://github.com/Renato4u/bouml/blob/main/assets/images/francia.png?raw=true" alt="Français">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dropdown-container">
+            <img src="assets/images/traductor_eduardo.png" style="cursor:pointer;" onclick="toggleMenu()" title="Más idiomas">
+            <div id="miMenuIdiomas" class="dropdown-menu">
+                <button onclick="traducirConGoogle('es')">🇪🇸 Español</button>
+                <button onclick="traducirConGoogle('en')">🇬🇧 Inglés</button>
+                <button onclick="traducirConGoogle('fr')">🇫🇷 Francés</button>
+                <button onclick="traducirConGoogle('de')">🇩🇪 Alemán</button>
+                <button onclick="traducirConGoogle('it')">🇮🇹 Italiano</button>
+                <button onclick="traducirConGoogle('pt')">🇵🇹 Portugués</button>
+                <button onclick="traducirConGoogle('ja')">🇯🇵 Japonés</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="google_translate_element"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="screenshots.html">Screenshots</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="install.html">Install</a></li>
+            <li><a href="#">Contributions</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+        <button class="btn-download">Descargar</button>
+    </nav>
+
+    <!-- MAIN CONTENT - MAPA DEL SITIO -->
+    <main class="page-container">
+        
+        <div class="page-header-title">
+            <h1>Mapa del sitio</h1>
+            <p>Encuentra rápidamente todas las secciones y recursos de BOUML</p>
+        </div>
+
+        <!-- PANEL 1: PÁGINAS PRINCIPALES -->
+        <div class="content-panel">
+            <div class="panel-top-bar"></div>
+            <div class="panel-header">
+                <h2><span class="panel-icon">🌐</span> Páginas Principales</h2>
+            </div>
+            <div class="panel-content">
+                <p>Accede a las secciones generales sobre la herramienta.</p>
+                <ul>
+                    <li><a href="index.html">Home (Inicio)</a></li>
+                    <li><a href="#">Features (Características)</a></li>
+                    <li><a href="screenshots.html">Screenshots (Capturas de Pantalla)</a></li>
+                    <li><a href="#">Download (Descargas)</a></li>
+                    <li><a href="install.html">Install (Guía de Instalación)</a></li>
+                    <li><a href="#">Benchmark (punto de referencia)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PANEL 2: DOCUMENTACIÓN OFICIAL -->
+        <div class="content-panel">
+            <div class="panel-top-bar"></div>
+            <div class="panel-header">
+                <h2><span class="panel-icon">📚</span> Documentación Oficial</h2>
+            </div>
+            <div class="panel-content">
+                <p>Manuales y referencias técnicas para aprender a usar BOUML.</p>
+                <ul>
+                    <li><a href="#">Documentation (Página principal de documentación)</a></li>
+                    <li><a href="https://www.bouml.fr/doc/index.html">Reference Manual (Manual de Referencia)</a></li>
+                    <li><a href="https://www.bouml.fr/doc/empty_html/index-withframe.html">API (Plug-out empty)</a></li>
+                    <li><a href="https://www.bouml.fr/tutorial/tutorial.html">BOUML Tutorial (Tutorial básico)</a></li>
+                    <li><a href="https://www.bouml.fr/tutorial/tutorial_plugout.html">Plug-out Tutorial (Tutorial avanzado)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PANEL 3: COMUNIDAD Y SOPORTE -->
+        <div class="content-panel">
+            <div class="panel-top-bar"></div>
+            <div class="panel-header">
+                <h2><span class="panel-icon">🤝</span> Comunidad y Soporte</h2>
+            </div>
+            <div class="panel-content">
+                <p>Preguntas frecuentes, colaboraciones e información técnica de rendimiento.</p>
+                <ul>
+                    <li><a href="#">Contributions (Contribuciones de la comunidad)</a></li>
+                    <li><a href="#">FAQ (Preguntas Frecuentes)</a></li>
+                    <li><a href="#">Benchmark (Pruebas de rendimiento)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PANEL 4: INFORMACIÓN Y LEGAL -->
+        <div class="content-panel">
+            <div class="panel-top-bar"></div>
+            <div class="panel-header">
+                <h2><span class="panel-icon">⚖️</span> Información y Legal</h2>
+            </div>
+            <div class="panel-content">
+                <p>Datos sobre el autor, enlaces externos y términos legales.</p>
+                <ul>
+                    <li><a href="#">Author & links (Autor y enlaces relacionados)</a></li>
+                    <li><a href="sitemap.html">Site map (Mapa del sitio actual)</a></li>
+                    <li><a href="#">Credits and legal mentions (Créditos y menciones legales)</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Site map</h4>
+                    <a href="#">FAQ</a>
+                    <a href="sitemap.html">Mapa del sitio</a>
+                    <a href="#">Legal Mention</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Detemap</h4>
+                    <a href="#">FAQ</a>
+                    <a href="sitemap.html">Mapa del sitio</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Documentacion</h4>
+                    <a href="#">Caracteriisticas</a>
+                    <a href="screenshots.html">Capturas</a>
+                    <a href="#">Descargas</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Benchmark</h4>
+                    <a href="#">Contribuciones</a>
+                    <a href="#">Benchmark</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Author & links</h4>
+                    <a href="#">Autor & enlaces</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                2024 BOUML. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS DE TRADUCCIÓN -->
+    <script type="text/javascript">
+        function toggleMenu() {
+            document.getElementById("miMenuIdiomas").classList.toggle("show-menu");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-container img')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-menu')) {
+                        openDropdown.classList.remove('show-menu');
+                    }
+                }
+            }
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es', 
+                includedLanguages: 'en,fr,es,de,it,pt,ja',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function traducirConGoogle(idioma) {
+            var combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = idioma;
+                combo.dispatchEvent(new Event('change')); 
+            }
+            document.getElementById("miMenuIdiomas").classList.remove("show-menu");
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

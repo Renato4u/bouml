@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUML - Copia Local</title>
+    <link rel="stylesheet" href="designs/styles.css">
+    <style>
+        /* Ocultar el widget oficial de Google por completo */
+        #google_translate_element {
+            display: none;
+        }
+        /* Evitar que Google ponga su barra superior molesta */
+        .skiptranslate iframe {
+            display: none !important;
+        }
+        body {
+            top: 0px !important;
+        }
+
+        /* --- ESTILOS PARA EL NUEVO MENÚ DESPLEGABLE --- */
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-menu {
+            display: none; /* Oculto por defecto */
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 10px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 1000;
+            min-width: 150px;
+            border: 1px solid #ddd;
+        }
+
+        .dropdown-menu button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            background: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            transition: background 0.2s;
+        }
+
+        .dropdown-menu button:hover {
+            background-color: #e4f1fe;
+            color: #0b53a8;
+        }
+
+        /* Clase para mostrar el menú con JS */
+        .show-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+        <div class="logo-section">
+            <a href="#" class="logo-link"><img src="https://github.com/Renato4u/bouml/blob/main/assets/images/BOUML_logo.png?raw=true" alt="UML"></a>
+            <span class="logo-text"><img src="assets/images/logo_eduardo.png" alt="BOUML"></span>
+            <div class="translate-section">
+                <span>Traducir</span>
+                <div class="flags">
+                    <div class="flag-uk" title="English" style="cursor:pointer;" onclick="traducirConGoogle('en')">
+                        <img src="https://github.com/Renato4u/bouml/blob/main/assets/images/reino-unido-3.png?raw=true" alt="English">
+                    </div>
+                    <div class="flag-fr" title="Français" style="cursor:pointer;" onclick="traducirConGoogle('fr')">
+                        <img src="https://github.com/Renato4u/bouml/blob/main/assets/images/francia.png?raw=true" alt="Français">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NUEVO CONTENEDOR PARA EL ICONO Y EL MENÚ -->
+        <div class="dropdown-container">
+            <img src="assets/images/traductor_eduardo.png" style="cursor:pointer;" onclick="toggleMenu()" title="Más idiomas">
+            
+            <!-- Lista de idiomas extra (puedes agregar los que quieras) -->
+            <div id="miMenuIdiomas" class="dropdown-menu">
+                <button onclick="traducirConGoogle('es')">🇪🇸 Español</button>
+                <button onclick="traducirConGoogle('en')">🇬🇧 Inglés</button>
+                <button onclick="traducirConGoogle('fr')">🇫🇷 Francés</button>
+                <button onclick="traducirConGoogle('de')">🇩🇪 Alemán</button>
+                <button onclick="traducirConGoogle('it')">🇮🇹 Italiano</button>
+                <button onclick="traducirConGoogle('pt')">🇵🇹 Portugués</button>
+                <button onclick="traducirConGoogle('ja')">🇯🇵 Japonés</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Elemento oculto de Google Translate -->
+    <div id="google_translate_element"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Screenshots</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="install.html">Install</a></li>
+            <li><a href="#">Contributions</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+        <button class="btn-download">Descargar</button>
+    </nav>
+
+    <!-- MAIN GRID -->
+    <main class="container">
+        <div class="cards-grid">
+            
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/all_medium.png">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Overall</div>
+                    <div class="card-subtitle">Bouml</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/usecasediagramdrawinggrad.png" alt="Use Case">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Use Case</div>
+                    <div class="card-subtitle">shadow drawing and color.....</div>
+                    <a href="https://www.bouml.fr/doc/index_usecasediagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/sequencediagramdrawing.png" alt="Sequence Diagram">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Sequence Diagram</div>
+                    <div class="card-subtitle">Sequence diagram...</div>
+                    <a href="https://www.bouml.fr/doc/index_sequencediagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/collaborationdiagramdrawing.png" alt="Comunication Diagram">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Comunication Diagram</div>
+                    <div class="card-subtitle">Communication diagram</div>
+                    <a href="https://www.bouml.fr/doc/index_collaborationdiagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/state1.png" alt="State Diagram">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">State Diagram</div>
+                    <div class="card-subtitle">State diagram</div>
+                    <a href="https://www.bouml.fr/doc/index_statediagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/activity1.png" alt="Activity Diagram">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Activity Diagram</div>
+                    <div class="card-subtitle">Activity diagram</div>
+                    <a href="https://www.bouml.fr/doc/index_activitydiagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/classdiagramdrawing.png" alt="Class Diagram">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Class Diagram</div>
+                    <div class="card-subtitle">the used drawing settings hide the attributes</div>
+                    <a href="https://www.bouml.fr/doc/index_classdiagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/objectdiagramdrawing.png" alt="Object Diagram">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Object Diagram</div>
+                    <div class="card-subtitle">Object diagram</div>
+                    <a href="https://www.bouml.fr/doc/index_objectdiagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/classcompositediagramdrawing.png" alt="Composite Diagram">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Composite Diagram</div>
+                    <div class="card-subtitle">Composite class diagram</div>
+                    <a href="https://www.bouml.fr/doc/classcompositestructurediagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/componentdiagramdrawing.png" alt="Component Diagrm">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Component Diagrm</div>
+                    <div class="card-subtitle">Component diagram</div>
+                    <a href="https://www.bouml.fr/doc/index_componentdiagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/nodedrawing.png" alt="Deployment Diagram">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Deployment Diagram</div>
+                    <div class="card-subtitle">Deployment diagram</div>
+                    <a href="https://www.bouml.fr/doc/index_deploymentdiagram.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/plugout2.png" alt="Plug-outs">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Plug-outs</div>
+                    <div class="card-subtitle">plug-outs implemented in C++ or Java</div>
+                    <a href="https://www.bouml.fr/doc/index_plugout.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/javacat2.png" alt="Java Catalog">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Java Catalog</div>
+                    <div class="card-subtitle">Java catalog (a plug-out)</div>
+                    <a href="https://www.bouml.fr/doc/index_javacat.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/projectcontrol5.png" alt="Proyect control">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Proyect control</div>
+                    <div class="card-subtitle">Project control</div>
+                    <a href="https://www.bouml.fr/doc/index_projectcontrol.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/projectsynchro7.png" alt="Proyect Sinchro">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Proyect Sinchro</div>
+                    <div class="card-subtitle">Project synchro</div>
+                    <a href="https://www.bouml.fr/doc/index_projectsynchro.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header-bar"></div>
+                <div class="card-image-container">
+                    <img src="https://www.bouml.fr/doc/figs/javareverse.png" alt="Performances">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Performances</div>
+                    <div class="card-subtitle">BOUML doesn't need many time nor memory</div>
+                    <a href="https://www.bouml.fr/benchmark.html"><button class="btn-details">Ver detalles</button></a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Site map</h4>
+                    <a href="#">FAQ</a>
+                    <a href="sitemap.html">Mapa del sitio</a>
+                    <a href="#">Legal Mention</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Detemap</h4>
+                    <a href="#">FAQ</a>
+                    <a href="sitemap.html">Mapa del sitio</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Documentacion</h4>
+                    <a href="#">Caracteriisticas</a>
+                    <a href="screenshots.html">Capturas</a>
+                    <a href="#">Descargas</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Benchmark</h4>
+                    <a href="#">Contribuciones</a>
+                    <a href="#">Benchmark</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Author & links</h4>
+                    <a href="#">Autor & enlaces</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                2024 BOUML. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript">
+        // 1. Mostrar u ocultar el menú al dar clic en el icono
+        function toggleMenu() {
+            document.getElementById("miMenuIdiomas").classList.toggle("show-menu");
+        }
+
+        // 2. Ocultar el menú si das clic en cualquier otra parte de la pantalla
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-container img')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-menu')) {
+                        openDropdown.classList.remove('show-menu');
+                    }
+                }
+            }
+        }
+
+        // 3. Inicializar Google Translate (oculto)
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es', 
+                includedLanguages: 'en,fr,es,de,it,pt,ja', // Idiomas que cargará
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        // 4. "Engañar" a Google para que traduzca según el botón presionado
+        function traducirConGoogle(idioma) {
+            var combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = idioma;
+                combo.dispatchEvent(new Event('change')); 
+            }
+            // Ocultar el menú después de seleccionar
+            document.getElementById("miMenuIdiomas").classList.remove("show-menu");
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
