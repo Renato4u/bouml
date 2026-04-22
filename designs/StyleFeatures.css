@@ -1,0 +1,271 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --top-bar-bg: #82b3f4;
+    --nav-bg: #112e72;
+    --nav-active: #1a8bf0;
+    --text-dark: #333;
+    --text-heading: #1b4f9c;
+    --aside-bg: #d1d1d1;
+    --footer-bg: #1d2e61;
+    --footer-text: #a0b2d8;
+}
+
+.top-bar {
+    background-color: var(--top-bar-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-bar .logo-section .main-logo {
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    color: #000;
+}
+
+.traducir-text {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.logo-section .flags {
+    display: flex;
+    gap: 5px;
+}
+
+.logo-section .flags img {
+    height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.translate-section {
+    display: flex;
+    align-items: center;
+}
+
+.translate-section .translate-icon {
+    height: 30px;
+}
+
+.nav-bar {
+    background-color: var(--nav-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+.nav-links li.active a {
+    background-color: var(--nav-active);
+}
+
+.nav-links li a:hover {
+    background-color: #164096;
+}
+
+.download-btn {
+    background: linear-gradient(to bottom, #42a1ec, #0070c9);
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.main-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-left {
+    flex: 2;
+}
+
+.content-left h2 {
+    color: var(--text-heading);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.content-left ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.content-left p {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.content-right {
+    flex: 1;
+    background-color: var(--aside-bg);
+    padding: 20px;
+    height: fit-content;
+}
+
+.content-right h2 {
+    color: var(--text-heading);
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.content-right ul {
+    padding-left: 20px;
+    color: var(--text-dark);
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #2a3f7a;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-col h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.copyright {
+    text-align: right;
+    font-size: 12px;
+    color: var(--footer-text);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-bg);
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .download-btn {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .logo-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .logo-text {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    .translate-section {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .copyright {
+        text-align: center;
+    }
+}
